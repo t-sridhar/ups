@@ -1,0 +1,275 @@
+@use 'scss/breakpoints';
+@use 'scss/config';
+@use 'scss/mixins';
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  background-color: #f7f6f3;
+  @include mixins.disableSelect();
+
+
+  .topContainer{
+    // background-color: rgb(201, 201, 201);
+    height: 8%;
+    width:100%;
+
+    .logo{
+      margin: 1rem;
+      cursor: pointer;
+      height: 80%;
+      width: 10%;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid;
+      border-image: linear-gradient(to right, #7f7d761e, rgba(149, 147, 138, 0)) 3;
+
+    }
+
+  }
+
+  .mainContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    .leftContainer{
+      height: 100%;
+      flex:1.5 2 35% ;
+      // background-color: rgb(229, 186, 186);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      .lottieContainer{
+        // background-color: blue;
+        display: flex;
+        flex-direction: column;
+        flex-grow:1;
+        height:70%;
+        width: 100%;
+        justify-content: flex-end;
+        @include breakpoints.biggerScreens {
+            width: 100%;
+            height: 60%;
+          }
+      }
+      .lDesignDiv{
+        align-self: flex-end;
+        right:0;
+        flex-grow:0;
+        height:0.4%;
+        width:90%;
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        background: linear-gradient(to left, #95938a1e, rgba(149, 147, 138, 0));
+      }
+      .leftBottom{
+        flex-grow:1;
+        height: 20%;
+        width: 100%;
+        display: flex;
+
+        .screenToggle{
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          margin:0.5rem;
+        }
+      }
+    }
+    //for outer Storzey Logo
+    .loginContainer{
+      display:flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height:100%;
+      width: 40%;
+
+    }
+    .loginBox{
+      // flex:1;
+      background-color:#fbfbfb;
+      height: 60%;
+      width: 35%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      border-radius: config.$br-xLarge;
+      box-shadow: config.$shadow_subtle;
+      // background-color: rgb(224, 207, 207);
+      
+
+      .text {
+          
+          display: flex;
+          flex-direction: column;
+          justify-self: flex-start;
+          font-size: 1rem;
+          font-weight: 500;
+          color: config.$text;
+          margin: 1rem;
+          align-self: center;
+          // background-color: #f9e095;
+          .mainText{
+            align-self:center;
+
+            @include mixins.disableSelect();
+          }
+      
+          .subText {
+            margin: 1rem;
+            align-self: center;
+            font-size: 1rem;
+            font-weight: 400;
+            color: config.$light_accent;
+            margin-bottom: 1rem;
+
+            @include mixins.disableSelect();
+          }
+        }
+      
+      
+      .inputField{
+        display: flex;
+        flex-direction: column;
+        width:80%;
+        gap: 1rem;
+        // background-color: red;
+
+        .anchor{
+          align-self: flex-end;
+          font-size: 0.8rem;
+          font-weight: 400;
+          color: config.$light_accent;
+          margin-bottom: 1rem;
+          cursor: pointer;
+
+          &:hover{
+            color: config.$dark_accent;
+            cursor: pointer;
+          }
+        }
+      }
+
+      
+
+      .button{
+        // background-color: green;
+        flex:1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width:80%;
+        gap: 1rem;
+        // background-color: red;
+      }
+
+            .footer {
+              height: 10%;
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+      
+              .logo {
+                width: 90%;
+                // background-color: config.$dark_shade;
+                fill: config.$dark_shade;
+              }
+      
+              .logoText {
+                font-size: 0.85rem;
+                color: config.$dark-shade;
+                @include mixins.disableSelect();
+              }
+            }
+
+      // .loginBox{
+      //   height:70%;
+      //   width:70%;
+      //   display: flex;
+      //   flex-direction: column;
+      //   align-items: center;
+      //   justify-content: center;
+      //   background-color: #fafafa;
+      //   border-radius: config.$br-xLarge;
+      //   max-width: 669px;
+      
+        
+
+      // }
+
+      @include breakpoints.biggerScreens {
+        width: 25%;
+        height: 45%;
+      }
+
+      @mixin tablets {
+        @media (min-width: 600px) and (max-width: 1024px) {
+          width: 40%;
+          height: 80%;
+        }
+
+      @media (min-width: 768px) and (max-width: 1200px) and (orientation: landscape) {
+        width: 40%;
+        height: 80%;
+        }
+      }
+    }
+        .rightContainer {
+          height: 100%;
+          flex: 0.5 2 10%;
+          // background-color: rgb(229, 186, 186);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+    
+          .lottieContainer {
+            // background-color: blue;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            height: 70%;
+            width: 100%;
+            justify-content: flex-end;
+            @include breakpoints.biggerScreens {
+                width: 100%;
+                height: 60%;
+              }
+          }
+    
+          .rDesignDiv {
+            align-self: flex-start;
+            right: 0;
+            flex-grow: 0;
+            height: 0.4%;
+            width: 90%;
+            border-top-right-radius: 2rem;
+            border-bottom-right-radius: 2rem;
+            // background-color: green;
+            background: linear-gradient(to right, #95938a1e, rgba(149, 147, 138, 0));
+          }
+    
+          .leftBottom {
+            flex-grow: 1;
+            height: 20%;
+            width: 100%;
+            display: flex;
+          }
+        }
+  }
+
+  
+}
